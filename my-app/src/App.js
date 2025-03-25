@@ -1,9 +1,11 @@
 import logo from './logo.svg';
-//import Home from "./project/Home";
-import Login from './project/Login';
+import Home from './project/Home';
+//import Login from './project/Login';
 //import timeImage from "../images/gre.jpg";
 import './App.css';
-import Reg from './project/Reg.jsx';
+//import Reg from './project/Reg.jsx';
+
+
 
 function App() {
   return (
@@ -23,9 +25,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    //<Home/>
-    //<Login/>
-    <Reg/>
+    <Home/>
   );
 }
 export default App;
