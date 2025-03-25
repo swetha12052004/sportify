@@ -1,4 +1,9 @@
 /* General Styles */
+.home-page {
+    background: none !important; 
+    background-color: black; 
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;

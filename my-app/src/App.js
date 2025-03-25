@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import Home from './project/Home';
+import Home from './project/Home.jsx';
 //import Login from './project/Login';
 //import timeImage from "../images/gre.jpg";
 import './App.css';

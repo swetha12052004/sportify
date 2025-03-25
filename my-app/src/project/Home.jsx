@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
-import "./Home.css";
+import img1 from '../images/img3.jpg';
+import img2 from '../images/fine.jpg';
+import img3 from '../images/back4.jpg';
+import './Home.css';
 
-export const Home = () => {
+export default function Home ()  {
   const [slideIndex, setSlideIndex] = useState(0);
-  const slides = ["img3.jpg", "fine.jpg", "back4.jpg"];
+  const slides = [img1,img2,img3];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, 5000);
+    document.body.style.background = "none";  // Remove previous background
+    document.body.style.backgroundColor = "black";  // Set new background color
+
+    return () => 
+      document.body.style.background = ""; 
     return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
-    <div>
+    <div  className="home-page">
       <nav>
         <div className="logo">SPORTIFY</div>
         <div className="nav-menu">
