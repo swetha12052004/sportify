@@ -6,6 +6,7 @@ import facebookIcon from "../images/face.png";
 import appleIcon from "../images/app.png";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+//import Swal from 'sweetalert2';
 // import Swal from 'sweetalert2';
 // import withReactContent from '@sweetalert2/react-content';
 
@@ -25,7 +26,26 @@ const Login = () => {
           password
       });
       alert(response.data.message);
-      // ReactSwal.fire({
+      // if(response.data.success)
+      //   {
+      //     Swal.fire({
+      //       title: 'Success!',
+      //       text: (response.data.message),
+      //       icon: 'success',
+      //       confirmButtonText: 'OK'
+      //     });
+      //     navigate('/Reg');
+      //   }
+      //   else if(!(response.data.success))
+      //   {
+      //     Swal.fire({
+      //       title: 'Error!',
+      //       text: 'User name or password is incorrect.',
+      //       icon: 'error',
+      //       confirmButtonText: 'OK'
+      //     });
+      //   }
+      // // ReactSwal.fire({
       //   title: 'Login Successful',
       //   text: 'Welcome to the app!',
       //   icon: 'success',
