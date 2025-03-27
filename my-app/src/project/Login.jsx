@@ -5,11 +5,17 @@ import googleIcon from "../images/goo.png";
 import facebookIcon from "../images/face.png";
 import appleIcon from "../images/app.png";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+// import Swal from 'sweetalert2';
+// import withReactContent from '@sweetalert2/react-content';
+
+// const ReactSwal = withReactContent(Swal);
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +25,14 @@ const Login = () => {
           password
       });
       alert(response.data.message);
+      // ReactSwal.fire({
+      //   title: 'Login Successful',
+      //   text: 'Welcome to the app!',
+      //   icon: 'success',
+      //   confirmButtonText: 'OK'
+      // });
+      // navigate('/register');
+
 
   } catch (error) {
       alert(error.response?.data?.message || "Login failed");

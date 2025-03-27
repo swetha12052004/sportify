@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Reg.css"; 
+import "./Reg.css";
+import axios from "axios";
 
 const Reg = () => {
   const [formData, setFormData] = useState({
@@ -42,12 +43,25 @@ const Reg = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    if (validate()) {
-      console.log("Form submitted", formData);
-      // Redirect or perform API call
-    }
+    try {
+      const response = await axios.post("http://localhost:5000/register", {
+          fullname:formData.fullname,
+          email:formData.email,
+          phone:formData.phone,
+          password:formData.password,
+      });
+      alert(response.data.message);
+
+  } catch (error) {
+      alert(error.response?.data?.message || "Login failed");
+  }
+
+    // if (validate()) {
+    //   console.log("Form submitted", formData);
+    //   // Redirect or perform API call
+    // }
   };
 
   return (
