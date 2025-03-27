@@ -4,20 +4,32 @@ import timeImage from "../images/gre.jpg"; // Import image correctly
 import googleIcon from "../images/goo.png";
 import facebookIcon from "../images/face.png";
 import appleIcon from "../images/app.png";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      setError("Both fields are required");
-      return;
-    }
-    setError("");
-    console.log("Logged in with", email, password);
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+          email,
+          password
+      });
+      alert(response.data.message);
+      
+  } catch (error) {
+      alert(error.response?.data?.message || "Login failed");
+  }
+
+    // if (!email || !password) {
+    //   setError("Both fields are required");
+    //   return;
+    // }
+    // setError("");
+    // console.log("Logged in with", email, password);
   };
 
   return (

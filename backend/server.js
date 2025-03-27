@@ -10,20 +10,41 @@ const PORT = process.env.PORT || 5000;
 app.use(cors()); // Allow requests from frontend
 app.use(bodyParser.json()); // Parse JSON data
 
+const users = [
+    { username: "swetha123@gmail.com", password: "swetha" },
+    { username: "user", password: "password" }
+];
+
 // Sample API Route
 app.get("/", (req, res) => {
-    res.send("Welcome to the API!");
+    res.send("Welcome");
 });
 
-// API for Processing Data
-app.post("/process", (req, res) => {
-    const { data } = req.body;
+app.post("/login", (req, res) => {
+    const { email, password } = req.body;
 
-    // Process Data (Example: Reverse String)
-    const processedData = data.split("").reverse().join("");
+    const user = users.find(u => u.username === email && u.password === password);
 
-    res.json({ success: true, result: processedData });
+    if (user) {
+        res.json({ success: true, message: "Login successful!" });
+    } else {
+        res.status(401).json({ success: false, message: "Invalid username or password" });
+    }
 });
+app.post("/register", (req, res) => {
+    const { fullname, email, phone, password } = req.body;
+
+    // Check if email already exists
+    const existingUser = users.find(user => user.email === email);
+    if (existingUser) {
+        return res.status(400).json({ success: false, message: "Email already registered" });
+    }
+    const newUser = { fullname, email, phone, password };
+    users.push(newUser);
+
+    res.json({ success: true, message: "Registration successful!" });
+});
+
 
 // Start Server
 app.listen(PORT, () => {

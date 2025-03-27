@@ -3,7 +3,8 @@ import Home from './project/Home.jsx';
 //import Login from './project/Login';
 //import timeImage from "../images/gre.jpg";
 import './App.css';
-//import Reg from './project/Reg.jsx';
+//import Login from './project/Login';
+import Reg from './project/Reg.jsx';
 
 
 
@@ -25,7 +26,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Home/>
+    <Reg/>
   );
 }
 export default App;
