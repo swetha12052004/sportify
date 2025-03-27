@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import Home from './project/Home.jsx';
-//import Login from './project/Login';
+import Login from './project/Login';
 //import timeImage from "../images/gre.jpg";
 import './App.css';
 //import Login from './project/Login';
-import Reg from './project/Reg.jsx';
+//import Reg from './project/Reg.jsx';
 
 
 
@@ -26,7 +26,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Reg/>
+    <Login/>
   );
 }
 export default App;

@@ -19,7 +19,7 @@ const Login = () => {
           password
       });
       alert(response.data.message);
-      
+
   } catch (error) {
       alert(error.response?.data?.message || "Login failed");
   }
@@ -45,8 +45,8 @@ const Login = () => {
           <h1 className="logo">SPORTIFY</h1>
       <div className="right-section">
         {/* Header Section */}
-        <div className="header">
-        </div>
+    
+        
         <div className="login-card">
           <h2 className="login-title">Login</h2>
           {error && <p className="error-message">{error}</p>}
