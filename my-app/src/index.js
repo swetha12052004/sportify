@@ -6,6 +6,7 @@ import Home from './project/Home';
 import Login from './project/Login';
 //import timeImage from "../images/gre.jpg";
 import Reg from './project/Reg.jsx';
+import Product from './project/Product';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
