@@ -1,10 +1,9 @@
 import React from "react";
 import { Star } from "lucide-react";
-import ball1 from "./images/ball1";
-import ball2 from "./images/ball2.avif";
-import ball3 from "./images/ball3.avif";
-import ball4 from "./images/ball4.avif";
-import ball5 from "./images/ball5.avif";
+import ball1 from "../images/ball1.avif";
+import ball2 from "../images/ball2.avif";
+import ball3 from "../images/ball3.avif";
+import ball4 from "../images/ball4.avif";
 
 import "./Product.css";
 
