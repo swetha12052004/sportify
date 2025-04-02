@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
+import "./Home module.css";
 import img1 from "../images/img3.jpg";
 import img2 from "../images/fine.jpg";
 import img3 from "../images/back4.jpg";
@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-    <nav className="navbar">
+      <nav className="navbar">
         <div className="logo">
           <h1>SPORTIFY</h1>
         </div>
@@ -38,7 +38,7 @@ const App = () => {
               <a href="#">Running</a>
             </div>
           </li>
-          
+
           <li className="dropdown">
             <button className="dropbtn">Men's Collection</button>
             <div className="dropdown-content">
@@ -71,15 +71,8 @@ const App = () => {
             </div>
           </li>
         </ul>
-        
-        {/* <ul className="nav-links">
-          <li><a href="#">All Sports</a></li>
-          <li><a href="#">Men's Collection</a></li>
-          <li><a href="#">Women's Collection</a></li>
-          <li><a href="#">Kid's Collection</a></li>
-        </ul>*/}
         <input type="text" placeholder="Search your gear..." className="search-bar" />
-      </nav> 
+      </nav>
 
       {/* Slideshow Section */}
       <div className="slideshow">
@@ -87,7 +80,12 @@ const App = () => {
           <div
             key={index}
             className={`slide ${index === currentIndex ? "active" : ""}`}
-            style={{ backgroundImage: `url(${image})` }}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "100vh",
+            }}
           ></div>
         ))}
 
@@ -100,7 +98,7 @@ const App = () => {
           <a href="/shop" className="shop-now">Shop Now</a>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
