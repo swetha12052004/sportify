@@ -1,169 +1,154 @@
-/* Style for the header */
-.header {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;  /* Center the logo */
+    justify-content: center;
     align-items: center;
-    padding: 15px 20px;
-    background-color: rgb(247, 237, 237);
-    position: relative;  /* Allows absolute positioning inside */
-    width: 100%; /* Full width */
-}
-
-/* Back Button */
-.back-button {
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  /* Main Container */
+  .login-container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Left Section */
+  .left-section {
+    flex: 1;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Right Section */
+  .right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .social-buttons img {
+    width: 40px;
+    cursor: pointer;
+  }
+  
+  .account-links {
+    margin-top: 10px;
+  }
+  
+  .text-blue-600 {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .create-account {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .create-account:hover {
+    background-color: #0056b3;
+  }
+  
+  .benefits {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .benefits p {
+    font-weight: bold;
+  }
+  
+  .benefits ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .back-button {
     position: absolute;
-    justify-content: center;  /* Center the logo */
-    align-items: center;
-    top: 30px;
-    left: 20px;  
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
     font-size: 16px;
     font-weight: bold;
-    color: black;
-    text-decoration: none;
-}
-
-/* Center "SPORTIFY" */
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap; 
-}
-
-/* Login Page Container */
-.login-container {
-    display: flex;
-    height: 100vh;
-    background-color: white;
-    background-image: none;
-}
-
-/* Left Image Section */
-.left-section {
-    width: 50%;
-    display: none;
-    background-color: white;
-}
-
-.left-section img {
-    width: 100%;
-    height: 95%;
-    object-fit: cover;
-    position: relative;
-    top: 78px;
-    background: white;
-}
-
-/* Right Login Section */
-.right-section {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-    background:white;
-}
-
-/* Login Card */
-.login-card {
-    background: white;
-    padding: 32px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    position: relative;
-    top: 45px;
-
-}
-
-/* Login Title */
-.login-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    position: relative;
-    top: -15px;
-
-}
-
-/* Input Fields */
-.input-field {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-bottom: 12px;
-    color:black;
-}
-
-/* Login Button */
-.login-button {
-    width: 100%;
-    background-color: #2563eb;
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    border-radius: 6px;
     cursor: pointer;
-}
-
-/* Social Login Buttons */
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 13px;
-    margin: 16px 0;
-}
-
-.social-buttons img {
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
-}
-
-/* Account Links */
-.account-links {
-    text-align: center;
-    font-size: 14px;
-}
-
-/* Create Account Button */
-.create-account {
-    width: 100%;
-    background-color: #2563eb;
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    border-radius: 6px;
-    margin-top: 12px;
-    cursor: pointer;
-}
-
-/* Benefits Section */
-.benefits {
-    font-size: 14px;
-    margin-top: 16px;
-}
-
-.benefits p {
-    font-weight: bold;
-}
-
-.benefits ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: #130c0c;
-}
-
-/* Responsive Design */
-@media (min-width: 768px) {
-    .left-section {
-        display: block;
-    }
-}
+  }
