@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./Login module.css";
 import timeImage from "../images/gre.jpg";
 import googleIcon from "../images/goo.png";
 import facebookIcon from "../images/face.png";
