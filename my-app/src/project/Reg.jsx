@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Reg.css";
+import "./Reg.module.css";
 import axios from "axios";
 
 const Reg = () => {
