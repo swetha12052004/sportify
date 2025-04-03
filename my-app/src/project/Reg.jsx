@@ -46,13 +46,21 @@ const Reg = () => {
   const handleSubmit =async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/register", {
-          fullname:formData.fullname,
+      const response = await axios.post("http://localhost:8000/api/auth/register", {
+          fullName:formData.fullname,
           email:formData.email,
-          phone:formData.phone,
           password:formData.password,
+          phone:formData.phone,
       });
-      alert(response.data.message);
+      if(response.data.success)
+      {
+        alert(response.data.message);
+      }
+      else
+      {
+        alert(response.data.message);
+      }
+      // alert(response.data.message);
 
   } catch (error) {
       alert(error.response?.data?.message || "Login failed");
@@ -65,7 +73,7 @@ const Reg = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container1">
       <h2>Create an Account</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
