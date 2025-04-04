@@ -95,7 +95,7 @@ const App = () => {
 
           <p>🔥 Fuel Your Passion. Elevate Your Game! 🔥</p>
           
-          <a href="/shop" className="shop-now">Shop Now</a>
+          <a href="/Login" className="shop-now">Shop Now</a>
         </div>
       </div>
     </div>

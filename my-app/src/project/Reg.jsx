@@ -100,7 +100,7 @@ const Reg = () => {
           {errors.password && <div className="error">{errors.password}</div>}
         </div>
 
-        <button type="submit" className="btn">Register</button>
+        <button type="submit" a href="/Login" className="btn">Register</button>
       </form>
 
       <p className="login-link">

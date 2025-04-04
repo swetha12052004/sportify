@@ -35,7 +35,7 @@ const Login = () => {
           icon: 'success',
           confirmButtonText: 'OK'
         });
-        navigate('/Home');
+        navigate('/');
       } else {
         Swal.fire({
           title: 'Error!',
@@ -97,10 +97,11 @@ const Login = () => {
 
           {/* Links */}
           <p className="account-links">
-            No account? <a href="#" className="text-blue-600">Forget password</a>
+            No account? <a href="/Forget" className="text-blue-600">Forget password</a>
           </p>
+          <button>
 
-          <button className="create-account">Create Your Account</button>
+          <a href="/Reg" className="create-account">Create Your Account</a></button>
 
           {/* Benefits Section */}
           <div className="benefits">
