@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Reg.module.css";
+import styles from"./Reg.module.css";
+import Swal from 'sweetalert2';
 import axios from "axios";
 
 const Reg = () => {
@@ -43,34 +44,77 @@ const Reg = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit =async (e) => {
+  // const handleSubmit =async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post("http://localhost:8000/api/auth/register", {
+  //         fullName:formData.fullname,
+  //         email:formData.email,
+  //         password:formData.password,
+  //         phone:formData.phone,
+  //     });
+  //     if(response.data.success)
+  //     {
+  //       alert(response.data.message);
+  //     }
+  //     else
+  //     {
+  //       alert(response.data.message);
+  //     }
+  //     // alert(response.data.message);
+
+  // } catch (error) {
+  //     alert(error.response?.data?.message || "Login failed");
+  // }
+
+  //   // if (validate()) {
+  //   //   console.log("Form submitted", formData);
+  //   //   // Redirect or perform API call
+  //   // }
+  // };
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validate()) {
+      return;
+    }
+
     try {
       const response = await axios.post("http://localhost:8000/api/auth/register", {
-          fullName:formData.fullname,
-          email:formData.email,
-          password:formData.password,
-          phone:formData.phone,
+        fullName: formData.fullname,
+        email: formData.email,
+        password: formData.password,
+        phone: formData.phone,
       });
-      if(response.data.success)
-      {
-        alert(response.data.message);
-      }
-      else
-      {
-        alert(response.data.message);
-      }
-      // alert(response.data.message);
 
-  } catch (error) {
-      alert(error.response?.data?.message || "Login failed");
-  }
+      if (response.data.success) {
+        Swal.fire({
+          title: 'Registered!',
+          text: response.data.message,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          window.location.href = '/Login'; // navigate after confirmation
+        });
+      } else {
+        Swal.fire({
+          title: 'Oops!',
+          text: response.data.message,
+          icon: 'error',
+          confirmButtonText: 'Retry'
+        });
+      }
 
-    // if (validate()) {
-    //   console.log("Form submitted", formData);
-    //   // Redirect or perform API call
-    // }
+    } catch (error) {
+      Swal.fire({
+        title: 'Error!',
+        text: error.response?.data?.message || "Registration failed",
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
   };
+
 
   return (
     <div className="container1">
@@ -100,7 +144,7 @@ const Reg = () => {
           {errors.password && <div className="error">{errors.password}</div>}
         </div>
 
-        <button type="submit" a href="/Login" className="btn">Register</button>
+        <button type="submit" className="btn">Register</button>
       </form>
 
       <p className="login-link">

@@ -102,4 +102,73 @@ export const login = async (req, res) => {
     }
 };
 
-
+// export const register = async (req, res) => {
+//     const { fullName, email, password, phone } = req.body;
+  
+//     try {
+//       // Validate all fields
+//       if (!fullName || !email || !password || !phone) {
+//         return res.status(400).json({ message: "All fields are required", success: false });
+//       }
+  
+//       // Check password length
+//       if (password.length < 6) {
+//         return res.status(400).json({ message: "Password must be at least 6 characters", success: false });
+//       }
+  
+//       // Validate email format
+//       const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+//       if (!emailRegex.test(email)) {
+//         return res.status(400).json({ message: "Invalid email format", success: false });
+//       }
+  
+//       // Validate phone format
+//       if (!/^\d{10}$/.test(phone)) {
+//         return res.status(400).json({ message: "Phone number must be 10 digits", success: false });
+//       }
+  
+//       // Check for existing email
+//       const existingUser = await User.findOne({ email });
+//       if (existingUser) {
+//         return res.status(400).json({ message: "Email already exists", success: false });
+//       }
+  
+//       // Check for existing phone
+//       const existingPhone = await User.findOne({ phone });
+//       if (existingPhone) {
+//         return res.status(400).json({ message: "Phone number already exists", success: false });
+//       }
+  
+//       // Hash the password
+//       const salt = await bcrypt.genSalt(10);
+//       const hashedPassword = await bcrypt.hash(password, salt);
+  
+//       // Create and save user
+//       const newUser = new User({
+//         fullName,
+//         email,
+//         password: hashedPassword,
+//         phone
+//       });
+  
+//       await newUser.save();
+  
+//       // Generate JWT tokens
+//       generateTokens(newUser._id, res);
+  
+//       return res.status(201).json({
+//         success: true,
+//         message: "Registration successful",
+//         user: {
+//           _id: newUser._id,
+//           fullName: newUser.fullName,
+//           email: newUser.email,
+//           phone: newUser.phone
+//         }
+//       });
+  
+//     } catch (error) {
+//       console.error("Error in register controller:", error.message);
+//       return res.status(500).json({ message: "Internal server error", success: false });
+//     }
+//   };
