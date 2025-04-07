@@ -6,8 +6,6 @@ import jwt from "jsonwebtoken"
 
 // Import the required packages
 import bcrypt from "bcryptjs" // for password hashing
-
-
 export const register = async (req, res) => {
     const { fullName, email, password, phone } = req.body;
 

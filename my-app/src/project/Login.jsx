@@ -106,6 +106,7 @@ const Login = () => {
           {/* Benefits Section */}
           <div className="benefits">
             <p>It's better when you're signed in</p>
+            
             <ul>
               <li>Exclusive Deals and Sporty Rewards</li>
               <li>Personalized Experiences</li>

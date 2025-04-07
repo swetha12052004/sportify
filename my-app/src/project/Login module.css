@@ -13,10 +13,10 @@ body {
 /* Main Container */
 .login-container {
   display: flex;
-  flex-direction: row;  /* Ensures left and right sections are side by side */
+  flex-direction: row;  
   width: 80%;
   max-width: 1100px;
-  height: 600px; /* Set height to ensure proper division */
+  height: 600px; 
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -25,19 +25,19 @@ body {
 
 /* Left Section - Image */
 .left-section {
-  flex: 1;  /* Takes up half of the container */
+  flex: 1;  
   background-color: #ccc;
 }
 
 .left-section img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fully covers its section */
+  object-fit: cover; 
 }
 
 /* Right Section - Login */
 .right-section {
-  flex: 1;  /* Takes up the other half */
+  flex: 1;  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +80,7 @@ body {
 .create-account {
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
+  /* background-color: #0957ab; */
   color: white;
   border: none;
   border-radius: 5px;
@@ -92,7 +92,7 @@ body {
 
 .login-button:hover,
 .create-account:hover {
-  background-color: #0056b3;
+  background-color: #267bd7;
 }
 
 /* Social Buttons */
